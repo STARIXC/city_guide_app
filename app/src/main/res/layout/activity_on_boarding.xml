@@ -2,85 +2,41 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lightWhite"
-    android:padding="15dp"
-    tools:context=".OnBoarding">
+    android:padding="20dp"
+    tools:context=".Common.OnBoarding">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="400dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="10dp"
-
-        android:src="@drawable/relax"
-        android:transitionName="logo_image"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/archivo_narrow"
-        android:text="@string/first_slide_title"
-        android:textAlignment="center"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/slider_desc"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/slider"
+        android:layout_width="368dp"
+        android:layout_height="496dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView" />
-
-    <TextView
-        android:id="@+id/slider_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:fontFamily="@font/archivo_narrow"
-        android:text="@string/first_slide_desc"
-        android:textAlignment="center"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView" />
-
-    <Button
-        android:id="@+id/skip_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#0000"
-        android:drawableEnd="@drawable/skip"
-        android:drawableRight="@drawable/skip"
-        android:onClick="skip"
-        android:padding="10dp"
-        android:text="@string/skip_btn"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3">
 
-        />
+    </androidx.viewpager.widget.ViewPager>
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="372dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/get_started_btn"
-            android:layout_width="match_parent"
+            android:layout_width="369dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
-            android:text="@string/lets_get_started"
-            android:visibility="invisible" />
+            android:text="@string/lets_get_started" />
 
         <LinearLayout
             android:id="@+id/dots"
@@ -91,16 +47,17 @@
             android:paddingBottom="20dp" />
 
         <Button
-            android:id="@+id/next_bnt"
+            android:id="@+id/next_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:background="#00000000"
+            android:layout_marginRight="64dp"
+            android:layout_marginBottom="0dp"
+            android:background="@color/transparent"
             android:drawableEnd="@drawable/next"
             android:drawableRight="@drawable/next"
-            android:onClick="next"
-            android:paddingBottom="15dp" />
+            android:paddingBottom="30dp" />
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

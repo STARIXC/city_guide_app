@@ -1,14 +1,16 @@
-package com.starixc.cityguide;
+package com.starixc.cityguide.User;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Login extends AppCompatActivity {
+import com.starixc.cityguide.R;
+
+public class UserDashboard extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_user_dashboard);
     }
 }
