@@ -1,16 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User.UserDashboard">
+    tools:context=".User.UserDashboard"
+    android:orientation="vertical">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+    <ImageView
+        android:layout_centerVertical="true"
+        android:layout_height="40dp"
+        android:layout_width="40dp"
+        android:src="@drawable/menu" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lets_get_started"
-        tools:layout_editor_absoluteX="172dp"
-        tools:layout_editor_absoluteY="327dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:background="@color/banner_background"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_height="40dp"
+        android:layout_width="40dp"
+        android:padding="5dp"
+        android:src="@drawable/add_missing_place_icon" />
+
+
+</RelativeLayout>
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <TextView
+                    android:fontFamily="@font/archivo_narrow"
+                    android:id="@+id/app_name"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/logo_name"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="28sp" />
+
+                <RelativeLayout
+                    android:background="@color/white"
+                    android:elevation="8dp"
+                    android:layout_below="@id/app_name"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent">
+
+                    <TextView
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_width="wrap_content"
+                        android:text="@string/search_text" />
+
+                    <ImageView
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_width="30dp"
+                        android:src="@drawable/search_icon" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

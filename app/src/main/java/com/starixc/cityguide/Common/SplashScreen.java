@@ -1,4 +1,4 @@
-package com.starixc.cityguide;
+package com.starixc.cityguide.Common;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,7 +12,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.starixc.cityguide.Common.OnBoarding;
+import com.starixc.cityguide.R;
 import com.starixc.cityguide.User.UserDashboard;
 
 public class SplashScreen extends AppCompatActivity {
@@ -60,13 +60,12 @@ private static int SPLASH_SCREEN = 5000;
                     editor.commit();
                     Intent intent = new Intent(SplashScreen.this, OnBoarding.class);
                     startActivity(intent);
-                    finish();
                 }
                 else{
                     Intent intent = new Intent(SplashScreen.this, UserDashboard.class);
                     startActivity(intent);
-                    finish();
                 }
+                finish();
 
             }
         },SPLASH_SCREEN);
