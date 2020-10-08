@@ -17,9 +17,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3">
+        app:layout_constraintVertical_bias="0.3"></androidx.viewpager.widget.ViewPager>
 
-    </androidx.viewpager.widget.ViewPager>
+    <Button
+        android:id="@+id/skip_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:drawableEnd="@drawable/skip"
+        android:drawableRight="@drawable/skip"
+        android:padding="10dp"
+        android:text="@string/skip_btn"
+        android:onClick="skip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -36,7 +47,8 @@
             android:layout_width="369dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
-            android:text="@string/lets_get_started" />
+            android:text="@string/lets_get_started"
+            android:visibility="invisible"/>
 
         <LinearLayout
             android:id="@+id/dots"
@@ -57,6 +69,7 @@
             android:background="@color/transparent"
             android:drawableEnd="@drawable/next"
             android:drawableRight="@drawable/next"
+            android:onClick="next"
             android:paddingBottom="30dp" />
 
     </RelativeLayout>

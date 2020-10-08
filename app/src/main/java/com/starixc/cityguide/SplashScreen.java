@@ -3,6 +3,7 @@ package com.starixc.cityguide;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
@@ -20,6 +21,9 @@ public class SplashScreen extends AppCompatActivity {
     TextView logo,slogan;
     // Animations
     Animation sideAnim,bottomAnim;
+
+    //create a variable that will be used to check if user is new or existing
+    SharedPreferences onBoardingScreen;
 private static int SPLASH_SCREEN = 5000;
 
     @Override
@@ -46,9 +50,24 @@ private static int SPLASH_SCREEN = 5000;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreen.this, OnBoarding.class);
-                startActivity(intent);
-                finish();
+                onBoardingScreen = getSharedPreferences("onBoardingScreen",MODE_PRIVATE);
+
+                //create a bolean string
+                boolean isFirstTime =onBoardingScreen.getBoolean("firstTime",true);
+                if (isFirstTime){
+                    SharedPreferences.Editor editor =onBoardingScreen.edit();
+                    editor.putBoolean("firstTime",false);
+                    editor.commit();
+                    Intent intent = new Intent(SplashScreen.this, OnBoarding.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else{
+                    Intent intent = new Intent(SplashScreen.this, UserDashboard.class);
+                    startActivity(intent);
+                    finish();
+                }
+
             }
         },SPLASH_SCREEN);
     }
