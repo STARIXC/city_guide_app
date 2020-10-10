@@ -4,16 +4,37 @@
     android:layout_height="300dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="8dp"
-    android:layout_margin="10dp"
+    android:layout_margin="5dp"
     app:cardCornerRadius="2dp">
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp">
+        android:padding="15dp">
         <ImageView
+            android:id="@+id/featured_image"
             android:layout_width="match_parent"
             android:layout_height="140dp"
-            android:src=""/>
+            android:src="@drawable/mcd"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/featured_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo"
+            android:text="McDonald's"
+            android:textSize="20sp" />
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rating="3.5"
+            style="@style/Widget.AppCompat.RatingBar.Small"/>
+        <TextView
+            android:id="@+id/featured_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr"/>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
