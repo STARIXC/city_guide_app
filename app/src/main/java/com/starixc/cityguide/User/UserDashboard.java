@@ -1,13 +1,16 @@
 package com.starixc.cityguide.User;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 
+import com.google.android.material.navigation.NavigationView;
 import com.starixc.cityguide.HelperClasses.HomeAdapter.CategoryAdapter;
 import com.starixc.cityguide.HelperClasses.HomeAdapter.CategoryHelperClass;
 import com.starixc.cityguide.HelperClasses.HomeAdapter.FeaturedAdapter;
@@ -21,6 +24,11 @@ import java.util.ArrayList;
 public class UserDashboard extends AppCompatActivity {
     RecyclerView featureRecycler,mostviewedRecycler,catRecycler;
     RecyclerView.Adapter adapter,adt,catAdt;
+    //drawer menu
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    //icon menu
+
 
 
 
@@ -34,6 +42,9 @@ public class UserDashboard extends AppCompatActivity {
         featureRecycler = findViewById(R.id.featuredRecycler);
         mostviewedRecycler = findViewById(R.id.mostviewedRecycler);
         catRecycler = findViewById(R.id.catRecycler);
+//        menu hooks
+        drawerLayout= findViewById(R.id.drawer_lt);
+        navigationView= findViewById(R.id.drawer_menu);
 
         featuredRecycler();
         mostviewedRecycler();
@@ -75,6 +86,10 @@ public class UserDashboard extends AppCompatActivity {
         featuredLocations.add(new FeaturedHealperClass(R.drawable.mcd,"number 3","Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor"));
         adapter = new FeaturedAdapter(featuredLocations);
         featureRecycler.setAdapter(adapter);
+
+    }
+
+    public void openDrawer(View view) {
 
     }
 }
