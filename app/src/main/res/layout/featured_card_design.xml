@@ -2,9 +2,9 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="160dp"
     android:layout_height="280dp"
+    android:layout_marginEnd="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardElevation="8dp"
-    android:layout_margin="5dp"
+    app:cardElevation="4dp"
     app:cardCornerRadius="2dp">
     <LinearLayout
         android:orientation="vertical"
@@ -30,11 +30,12 @@
             android:layout_height="wrap_content"
             android:rating="3.5"
             style="@style/Widget.AppCompat.RatingBar.Small"/>
+
         <TextView
             android:id="@+id/featured_desc"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr"/>
+            android:layout_height="81dp"
+            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

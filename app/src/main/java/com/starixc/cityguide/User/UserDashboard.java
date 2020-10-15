@@ -8,15 +8,21 @@ import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 
+import com.starixc.cityguide.HelperClasses.HomeAdapter.CategoryAdapter;
+import com.starixc.cityguide.HelperClasses.HomeAdapter.CategoryHelperClass;
 import com.starixc.cityguide.HelperClasses.HomeAdapter.FeaturedAdapter;
 import com.starixc.cityguide.HelperClasses.HomeAdapter.FeaturedHealperClass;
+import com.starixc.cityguide.HelperClasses.HomeAdapter.MostViewedAdapter;
+import com.starixc.cityguide.HelperClasses.HomeAdapter.MostViewedHelperClass;
 import com.starixc.cityguide.R;
 
 import java.util.ArrayList;
 
 public class UserDashboard extends AppCompatActivity {
-    RecyclerView featureRecycler;
-    RecyclerView.Adapter adapter;
+    RecyclerView featureRecycler,mostviewedRecycler,catRecycler;
+    RecyclerView.Adapter adapter,adt,catAdt;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +32,37 @@ public class UserDashboard extends AppCompatActivity {
 
         //hooks
         featureRecycler = findViewById(R.id.featuredRecycler);
+        mostviewedRecycler = findViewById(R.id.mostviewedRecycler);
+        catRecycler = findViewById(R.id.catRecycler);
+
         featuredRecycler();
+        mostviewedRecycler();
+        catRecycler();
+    }
+
+    private void catRecycler() {
+        catRecycler.setHasFixedSize(true);
+        catRecycler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        ArrayList<CategoryHelperClass> categoryList = new ArrayList<>();
+        categoryList.add(new CategoryHelperClass(R.drawable.restaurant_img,"Restaurant"));
+        categoryList.add(new CategoryHelperClass(R.drawable.restaurant_img,"Restaurant"));
+        categoryList.add(new CategoryHelperClass(R.drawable.restaurant_img,"Restaurant"));
+        categoryList.add(new CategoryHelperClass(R.drawable.restaurant_img,"Restaurant"));
+        categoryList.add(new CategoryHelperClass(R.drawable.restaurant_img,"Restaurant"));
+        categoryList.add(new CategoryHelperClass(R.drawable.restaurant_img,"Restaurant"));
+        catAdt = new CategoryAdapter(categoryList);
+        catRecycler.setAdapter(catAdt);
+    }
+
+    private void mostviewedRecycler() {
+        mostviewedRecycler.setHasFixedSize(true);
+        mostviewedRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false));
+        ArrayList<MostViewedHelperClass> mostviewedLocation = new ArrayList<>();
+        mostviewedLocation.add(new MostViewedHelperClass(R.drawable.mcd,"Shoppers","Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor"));
+        mostviewedLocation.add(new MostViewedHelperClass(R.drawable.mcd,"Shoppers","Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor"));
+        mostviewedLocation.add(new MostViewedHelperClass(R.drawable.mcd,"Shoppers","Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor"));
+        adt= new MostViewedAdapter(mostviewedLocation);
+        mostviewedRecycler.setAdapter(adt);
     }
 
     private void featuredRecycler() {

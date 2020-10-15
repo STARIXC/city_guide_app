@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="8dp"
+    android:layout_margin="10dp"
+    android:background="@color/cardview_light_background">
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_margin="10dp"
+        android:elevation="8dp"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/ms_image"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mcd" />
+          <TextView
+                android:id="@+id/ms_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/ms_image"
+                android:fontFamily="@font/baloo"
+                android:text="McDonald's"
+              android:layout_marginStart="10dp"
+                android:textSize="20sp" />
+        <RatingBar
+            android:id="@+id/ms_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ms_title"
+            android:layout_toEndOf="@id/ms_image"
+            android:layout_marginStart="10dp"
+            android:rating="4"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            />
+        <TextView
+            android:id="@+id/ms_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/ms_image"
+            android:layout_below="@id/ms_rating"
+            android:layout_marginStart="10dp"
+            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr"/>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
