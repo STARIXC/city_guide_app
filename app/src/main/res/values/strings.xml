@@ -20,14 +20,14 @@
     <string name="next_btn">Next</string>
     <string name="lets_get_started">Lets Get Started</string>
     <string name="search_text">Search...</string>
-<!--    Strings for Dashboard-->
-<!--    Categories-->
+    <!--    Strings for Dashboard-->
+    <!--    Categories-->
     <string name="hotels">Hotels</string>
     <string name="restaurants">Restaurants</string>
     <string name="shops">Shops</string>
     <string name="banks">Banks</string>
     <string name="airports">Airports</string>
-<!--titles and descriptions-->
+    <!--titles and descriptions-->
     <string name="featured_locations">All Featured locations</string>
     <string name="featured_location_description">All the locations that are featured and have top demand in town!</string>
     <string name="most_viewed_location">Most view</string>

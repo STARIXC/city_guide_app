@@ -11,6 +11,6 @@
 <!--        text collor-->
         <item name="colorPrimary">@color/colorPrimary</item>
 <!--        backgroud color-->
-          <item name="colorAccent">@color/colorAccent</item>
+          <item name="colorAccent">@color/black</item>
     </style>
 </resources>
