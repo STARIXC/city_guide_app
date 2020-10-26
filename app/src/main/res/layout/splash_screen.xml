@@ -50,6 +50,8 @@
         android:text="@string/slogan_name"
         android:textAlignment="center"
         android:textSize="18sp"
+        android:textColor="@color/lightWhite"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
